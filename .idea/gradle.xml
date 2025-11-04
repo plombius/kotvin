@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="CHOOSE_PER_TEST" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="" />
+        <option name="gradleJvm" value="#GRADLE_LOCAL_JAVA_HOME" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/auth" />
+            <option value="$PROJECT_DIR$/auth/basickotvinauth" />
+            <option value="$PROJECT_DIR$/auth/basickotvinauth/client" />
+            <option value="$PROJECT_DIR$/auth/basickotvinauth/server" />
+            <option value="$PROJECT_DIR$/auth/basickotvinauth/shared" />
+            <option value="$PROJECT_DIR$/compose" />
+            <option value="$PROJECT_DIR$/forms" />
+            <option value="$PROJECT_DIR$/networking" />
+            <option value="$PROJECT_DIR$/networking/http" />
+            <option value="$PROJECT_DIR$/networking/http/client" />
+            <option value="$PROJECT_DIR$/networking/http/kspProcessor" />
+            <option value="$PROJECT_DIR$/networking/http/server" />
+            <option value="$PROJECT_DIR$/networking/http/shared" />
+            <option value="$PROJECT_DIR$/networking/server" />
+            <option value="$PROJECT_DIR$/networking/tcp" />
+            <option value="$PROJECT_DIR$/platform" />
+            <option value="$PROJECT_DIR$/storage" />
+            <option value="$PROJECT_DIR$/storage/sql" />
+            <option value="$PROJECT_DIR$/storage/sql/kspProcessor" />
+            <option value="$PROJECT_DIR$/storage/sql/runtime" />
+            <option value="$PROJECT_DIR$/testapp" />
+            <option value="$PROJECT_DIR$/testapp/client" />
+            <option value="$PROJECT_DIR$/testapp/server" />
+            <option value="$PROJECT_DIR$/testapp/shared" />
+            <option value="$PROJECT_DIR$/utils" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
