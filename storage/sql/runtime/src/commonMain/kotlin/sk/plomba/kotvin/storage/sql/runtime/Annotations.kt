@@ -1,4 +1,4 @@
-package sk.plomba.kotvin.storage.sql.kspProcessor
+package sk.plomba.kotvin.storage.sql.runtime
 
 @Target(AnnotationTarget.CLASS)
 annotation class KotvinEntity

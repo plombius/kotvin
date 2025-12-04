@@ -22,8 +22,8 @@ class AchievementListViewModel(
 
     fun load() {
         viewModelScope.launch(Dispatchers.IO) {
-            //achievementsLocal.value = achievementRepository.getAllLocal()
-            achievementsRemote.value = achievementRepository.getAllRemote().data?: listOf()
+            achievementsLocal.value = achievementRepository.getAllLocal()
+            //achievementsRemote.value = achievementRepository.getAllRemote().data?: listOf()
         }
     }
 
@@ -33,5 +33,11 @@ class AchievementListViewModel(
 
     fun onRemoteCheckChanged(checked: Boolean){
         remoteChecked.value = checked
+    }
+
+    fun add(){
+        viewModelScope.launch {
+            achievementRepository.saveAchievementLocal(Achievement(name = "jozo", location = "tu", dateTime = 5, duration = 25))
+        }
     }
 }

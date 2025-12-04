@@ -3,6 +3,7 @@ package sk.plomba.kotvin.storage.sql.runtime
 
 import android.content.Context
 import android.database.Cursor
+import android.database.DatabaseUtils
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import sk.plomba.kotvin.platform.PlatformContext
@@ -20,9 +21,8 @@ class AndroidKotvinDbHandler(
             db.execSQL("CREATE TABLE IF NOT EXISTS Achievement (\n" +
                     "  id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\n" +
                     "  name TEXT NOT NULL,\n" +
-                    "  description TEXT NOT NULL,\n" +
                     "  location TEXT NOT NULL,\n" +
-                    "  dateTime INTEGER NOT NULL\n" +
+                    "  dateTime INTEGER NOT NULL,\n" +
                     "  duration INTEGER NOT NULL\n" +
                     ");")
         }
@@ -103,5 +103,11 @@ class AndroidKotvinDbHandler(
         if (list.isEmpty()) throw KotvinSqlException("Expected one row, got 0")
         if (list.size > 1) throw KotvinSqlException("Expected one row, got ${list.size}")
         return list.first()
+    }
+
+    override fun checkTableExists(tableName: String): Boolean {
+        val db = adb ?: throw KotvinSqlException("Not connected")
+        val sql = "SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name=?"
+        return DatabaseUtils.longForQuery(db, sql, arrayOf(tableName)) > 0
     }
 }

@@ -45,7 +45,8 @@ fun AchievementListScreen(
         Row {
             Button(
                 onClick = {
-                    navController.navigate(RouteAddAchievement)
+                    viewModel.add()
+                    //navController.navigate(RouteAddAchievement)
                 }
             ){
                 Text("add achievement")

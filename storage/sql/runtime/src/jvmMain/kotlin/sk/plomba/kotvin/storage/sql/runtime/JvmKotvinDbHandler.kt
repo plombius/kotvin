@@ -73,4 +73,8 @@ class JvmKotvinDbHandler: KotvinDbHandler {
         if (list.size > 1) throw KotvinSqlException("Expected one row, got ${list.size}")
         return list.first()
     }
+
+    override fun checkTableExists(tableName: String): Boolean {
+        return conn?.metaData?.getTables(null, null, tableName, null)?.next()?: false
+    }
 }

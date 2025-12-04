@@ -1,19 +1,12 @@
-package sk.plomba.kotvin.testapp.shared
+package sk.plomba.kotvin.storage.sql.runtime.schemaversioning
 
-import kotlinx.serialization.Serializable
+
 import sk.plomba.kotvin.storage.sql.runtime.KotvinEntity
 import sk.plomba.kotvin.storage.sql.runtime.KotvinPrimaryKey
-
-@Serializable
 @KotvinEntity
-data class Achievement (
+data class SchemaVersion (
     @KotvinPrimaryKey
     val id: Int? = null,
     val name: String,
-    val location: String,
-    val dateTime: Long,
-    val duration: Long
+    val version: Int
 )
-
-
-

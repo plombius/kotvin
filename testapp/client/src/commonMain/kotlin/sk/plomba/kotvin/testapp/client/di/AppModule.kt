@@ -18,7 +18,11 @@ class AppModule (
 ){
     val httpExecutor by lazy { HttpExecutor("") }
     val httpExecutor2 by lazy { HttpExecutor2("") }
-    val kotvinDbHandler by lazy { getKotvinDbHandler(platformContext) }
+    val kotvinDbHandler by lazy {
+        val db = getKotvinDbHandler(platformContext)
+        db.connect("","", "")
+        db
+    }
     val achievementDao by lazy { AchievementDao(kotvinDbHandler) }
 
     val basicLoginApi by lazy { BasicLoginApiImpl(httpExecutor2) }

@@ -1,13 +1,9 @@
 package sk.plomba.kotvin.storage.sql.kspProcessor
 import com.google.devtools.ksp.processing.*
 import com.google.devtools.ksp.symbol.*
-import com.google.devtools.ksp.visitor.KSTopDownVisitor
 import java.io.OutputStreamWriter
-
-import com.google.devtools.ksp.getDeclaredProperties
-import com.google.devtools.ksp.isAbstract
-import com.google.devtools.ksp.processing.*
-import com.google.devtools.ksp.symbol.*
+import sk.plomba.kotvin.storage.sql.runtime.KotvinEntity
+import sk.plomba.kotvin.storage.sql.runtime.KotvinPrimaryKey
 
 class KotvinDaoProcessor(private val env: SymbolProcessorEnvironment) : SymbolProcessor {
     private val logger = env.logger

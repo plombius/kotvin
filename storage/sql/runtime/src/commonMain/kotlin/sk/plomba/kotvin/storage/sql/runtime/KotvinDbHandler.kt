@@ -21,6 +21,9 @@ interface KotvinDbHandler {
     /** SELECT that must return exactly one row; throws if 0 or >1. */
     @Throws(KotvinSqlException::class)
     fun <T> querySingle(sql: String, params: List<Any?>, rowMapper: (List<Any?>) -> T): T
+
+    @Throws(KotvinSqlException::class)
+    fun checkTableExists(tableName: String): Boolean
 }
 
 expect fun getKotvinDbHandler(platformContext: PlatformContext): KotvinDbHandler

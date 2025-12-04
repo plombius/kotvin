@@ -14,6 +14,7 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     implementation(libs.ksp.processing.api)
+    implementation(project(":storage:sql:runtime"))
 }
 
 tasks.test {
